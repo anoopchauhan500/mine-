@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prompt Page</title>
+    <style>
+        #container {
+    text-align: center;
+    margin-top: 50px;
+    height: 400px;
+}
+
+button {
+    background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+}
+
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>asking for last time?is it yes or no??</h1>
+        <button id="yesButton" onclick="goToPage5()">Yes</button>
+        <button id="noButton">No</button>
+    </div>
+
+    <script>
+        const noButton = document.getElementById('noButton');
+
+noButton.addEventListener('mouseover', moveNoButton);
+
+function moveNoButton() {
+    // Generate random positions for the No button within the container
+    const container = document.getElementById('container');
+    const maxWidth = container.clientWidth - noButton.clientWidth;
+    const maxHeight = container.clientHeight - noButton.clientHeight;
+
+    const randomLeft = Math.floor(Math.random() * maxWidth);
+    const randomTop = Math.floor(Math.random() * maxHeight);
+
+    noButton.style.position = 'absolute';
+    noButton.style.left = randomLeft + 'px';
+    noButton.style.top = randomTop + 'px';
+}
+
+function goToPage5() {
+    window.location.href = '5.html';
+}
+
+    </script>
+</body>
+
+</html>
